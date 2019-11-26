@@ -197,14 +197,7 @@
     }
 
     let findAnagrams = (string) => {
-        /*  //on split le mot
-          let newWord = "";
-          for (let i = 0; i < string.length - 1; i++) {
-              newWord += string[i];
-              console.log(newWord);
-              console.log(findAnagrams(newWord.slice(0, i) + newWord.slice(0, i + 1)));
-          }//en cours*/
-        * /
+
 
     }
 
