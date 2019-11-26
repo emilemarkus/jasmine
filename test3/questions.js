@@ -77,38 +77,63 @@ let getElementsUntilGreaterThanFive = (array) => {
     return newArray.slice(0, newArray.indexOf(null));
 }
 
-/*let convertArrayToObject = (array) => array.reduce((result, item, length, table) => result[item])
+let convertArrayToObject = (array) => {
+    let newObj = {};
+    for (let i = 0; i <= array.length - 1; i++) {
+        if (i % 2 == 0) {
+            newObj[array[i]] = " ";
+        } else {
+            newObj[array[i - 1]] = array[i];
+        }
+    }
+    return newObj;
+}
 
-for (let i = 0; i <= array.length - 1; i++) {
-    console.log(array[i]);
-}*/
-
-
-let getAllLetters = (array) => console.log(array.map((a) => a.split(',')).flat());
-
+let getAllLetters = (array) => Array.from(new Set(array.join('').split("").sort()));
 
 let swapKeysAndValues = (object) => {
-    return 'Write your method here';
+    //console.log(object);
+    let newObj = {};
+    for (id in object) {
+        newObj[object[id]] = id;
+    }
+    return newObj;
 }
 
 let sumKeysAndValues = (object) => {
-    return 'Write your method here';
-}
+    let total = 0;
+    for (val in object) {
+        total += +val + object[val];
+    }
+    return total;
 
+
+}
 let removeCapitals = (string) => {
-    return 'Write your method here';
+    let finalString = "";
+    for (let i = 0; i <= string.length - 1; i++) {
+        if ((string[i].charCodeAt() > 90) || (string[i].charCodeAt() == 32)) {
+            finalString += string[i];
+        }
+    }
+    return finalString;
 }
 
-let roundUp = (number) => {
-    return 'Write your method here';
-}
+let roundUp = (number) => Math.ceil(number);
+
+
 
 let formatDateNicely = (date) => {
-    return 'Write your method here';
+    console.log(date);
+    let day = ("0" + date.getDate()).slice(-2);
+    let month = date.getMonth() + 1;
+    month = ("0" + month).slice(-2);
+    let year = date.getUTCFullYear();
+    return (`${day}/${month}/${year}`)
 }
 
 let getDomainName = (string) => {
-    return 'Write your method here';
+
 }
 
 let titleize = (string) => {
